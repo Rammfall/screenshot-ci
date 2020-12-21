@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const resolutions = require('./../config/resolutions');
+const resolutions = require('./config/resolutions');
 const { pages, url } = require('./config/pages');
 const scroll = require('./utils/scrollAllPage');
 
@@ -15,7 +15,7 @@ describe.each(pages)('Page %p',  (currentPage) => {
     await page.goto(`${url}/${currentPage}`);
   });
 
-  test.each(resolutions)('Test screenshot on %i width, height %i > %s', async (width, height, d) => {
+  test.each(resolutions)('Test screenshot on %i width, height %i > %s', async (width, height, resolution) => {
     await page.setViewport({
       width,
       height
@@ -24,8 +24,9 @@ describe.each(pages)('Page %p',  (currentPage) => {
     const image = await page.screenshot({fullPage: true});
 
     expect(image).toMatchImageSnapshot({
-      customSnapshotsDir: `__snapshots__/${currentPage}`,
-      customSnapshotIdentifier: `${d}-${width}`
+      customSnapshotsDir: `./screenshots/__snapshots__/${currentPage}`,
+      customDiffDir: `./screenshots/__snapshots__/${currentPage}/diffs`,
+      customSnapshotIdentifier: `${resolution}-${width}`
     });
   });
 
