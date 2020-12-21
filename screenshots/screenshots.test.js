@@ -2,7 +2,6 @@ const puppeteer = require('puppeteer');
 
 const resolutions = require('./config/resolutions');
 const { pages, url } = require('./config/pages');
-const scroll = require('./utils/scrollAllPage');
 
 describe.each(pages)('Page %p',  (currentPage) => {
   let browser;
@@ -20,7 +19,7 @@ describe.each(pages)('Page %p',  (currentPage) => {
       width,
       height
     });
-    await scroll(page);
+    console.log(2);
     const image = await page.screenshot({fullPage: true});
 
     expect(image).toMatchImageSnapshot({
