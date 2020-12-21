@@ -1,23 +1,12 @@
 version: 2.1
 
-executors:
-  node:
-    docker:
-      - image: circleci/node:14.15.3
-        environment:
-          NODE_ENV: development
 
 jobs:
   screenshot:
-    executor: node
+    executor: node/default
     steps:
       - checkout
-      - run:
-          name: install dependencies
-          command: npm ci
-      - run:
-          command: cat /sys/fs/cgroup/memory/memory.max_usage_in_bytes
-          when: always
+      - node/install-packages
       - run:
           name: Install Headless Chrome dependencies
           command: |
@@ -39,9 +28,11 @@ jobs:
           command: npm test
       - store_artifacts:
           name: Saving puppeteer screenshots
-          path: ~/project/screenshots/__snapshots__
+          path: ~/screenshot-ci/screenshots/__snapshots__
           destination: /screenshot-ci
 
+orbs:
+  node: circleci/node@3.0.0
 workflows:
   main-pipeline:
     jobs:
