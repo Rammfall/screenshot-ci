@@ -25,13 +25,13 @@ describe('Screenshots tests', () => {
         height
       });
 
-      // const image = await page.screenshot({ fullPage: true });
-      //
-      // expect(image).toMatchImageSnapshot({
-      //   customSnapshotsDir: `./screenshots/__snapshots__/${currentPage}`,
-      //   customDiffDir: `./screenshots/__snapshots__/${currentPage}/diffs`,
-      //   customSnapshotIdentifier: `${resolution}-${width}`
-      // });
+      const image = await page.screenshot({ fullPage: true });
+
+      expect(image).toMatchImageSnapshot({
+        customSnapshotsDir: `./screenshots/__snapshots__/${currentPage}`,
+        customDiffDir: `./screenshots/__snapshots__/${currentPage}/diffs`,
+        customSnapshotIdentifier: `${resolution}-${width}`
+      });
     });
 
     afterAll(async () => {
