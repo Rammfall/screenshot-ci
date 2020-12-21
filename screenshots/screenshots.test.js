@@ -10,10 +10,10 @@ describe('Screenshots tests', () => {
     browser = await puppeteer.launch();
   });
 
-
   describe.each(pages)('Page %p', ( currentPage ) => {
     let page;
 
+    console.log(`On page ${currentPage}`);
     beforeAll(async () => {
       page = await browser.newPage();
 
@@ -25,6 +25,8 @@ describe('Screenshots tests', () => {
         width,
         height
       });
+
+      console.log(`In resolution ${resolution}`);
       const image = await page.screenshot({ fullPage: true });
 
       expect(image).toMatchImageSnapshot({
@@ -32,6 +34,7 @@ describe('Screenshots tests', () => {
         customDiffDir: `./screenshots/__snapshots__/${currentPage}/diffs`,
         customSnapshotIdentifier: `${resolution}-${width}`
       });
+      console.log(`done in resolution ${resolution}`);
     });
 
     afterAll(async () => {
