@@ -17,6 +17,10 @@ jobs:
 #            libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates \
 #            fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
       - run:
+          name: Install Headless Chrome dependencies
+          command: |
+            sudo apt-get install -yq libnss3
+      - run:
           name: Build next server
           command: npm run build
       - run:
