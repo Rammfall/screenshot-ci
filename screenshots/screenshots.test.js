@@ -13,7 +13,6 @@ describe('Screenshots tests', () => {
   describe.each(pages)('Page %p', ( currentPage ) => {
     let page;
 
-    console.log(`On page ${currentPage}`);
     beforeAll(async () => {
       page = await browser.newPage();
 
@@ -26,15 +25,13 @@ describe('Screenshots tests', () => {
         height
       });
 
-      console.log(`In resolution ${resolution}`);
-      // const image = await page.screenshot({ fullPage: true });
-      //
-      // expect(image).toMatchImageSnapshot({
-      //   customSnapshotsDir: `./screenshots/__snapshots__/${currentPage}`,
-      //   customDiffDir: `./screenshots/__snapshots__/${currentPage}/diffs`,
-      //   customSnapshotIdentifier: `${resolution}-${width}`
-      // });
-      console.log(`done in resolution ${resolution}`);
+      const image = await page.screenshot({ fullPage: true });
+
+      expect(image).toMatchImageSnapshot({
+        customSnapshotsDir: `./screenshots/__snapshots__/${currentPage}`,
+        customDiffDir: `./screenshots/__snapshots__/${currentPage}/diffs`,
+        customSnapshotIdentifier: `${resolution}-${width}`
+      });
     });
 
     afterAll(async () => {

@@ -1,7 +1,7 @@
 module.exports = {
   pages: [
     '',
-    'about'
+    // 'about'
   ],
   url: 'http://localhost:4000'
 };
