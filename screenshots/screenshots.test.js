@@ -7,7 +7,9 @@ describe('Screenshots tests', () => {
   let browser;
 
   beforeAll(async () => {
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      ignoreDefaultArgs: ['–no-sandbox', '–disable-setuid-sandbox']
+    });
   });
 
   describe.each(pages)('Page %p', ( currentPage ) => {
