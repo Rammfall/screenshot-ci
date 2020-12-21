@@ -32,7 +32,9 @@ describe('Screenshots tests', () => {
       expect(image).toMatchImageSnapshot({
         customSnapshotsDir: `./screenshots/__snapshots__/${currentPage}`,
         customDiffDir: `./screenshots/__snapshots__/${currentPage}/diffs`,
-        customSnapshotIdentifier: `${resolution}-${width}`
+        customSnapshotIdentifier: `${resolution}-${width}`,
+        failureThreshold: 0.1,
+        failureThresholdType: 'percent'
       });
     });
 
