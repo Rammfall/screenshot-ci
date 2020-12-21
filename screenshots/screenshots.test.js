@@ -27,7 +27,7 @@ describe('Screenshots tests', () => {
       });
 
       console.log(`In resolution ${resolution}`);
-      const image = await page.screenshot({ fullPage: true });
+      // const image = await page.screenshot({ fullPage: true });
       //
       // expect(image).toMatchImageSnapshot({
       //   customSnapshotsDir: `./screenshots/__snapshots__/${currentPage}`,
