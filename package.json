@@ -1,0 +1,30 @@
+{
+  "name": "screenshot-ci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rammfall/screenshot-ci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rammfall/screenshot-ci/issues"
+  },
+  "homepage": "https://github.com/Rammfall/screenshot-ci#readme",
+  "dependencies": {
+    "next": "^10.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "jest-image-snapshot": "^4.3.0",
+    "puppeteer": "^5.5.0",
+    "sass": "^1.30.0"
+  }
+}
