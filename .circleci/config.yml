@@ -39,7 +39,7 @@ jobs:
           command: npm test
       - store_artifacts:
           name: Saving puppeteer screenshots
-          path: ~/screenshot-ci/screenshots/__snapshots__
+          path: ~/project/screenshots/__snapshots__
           destination: /screenshot-ci
 
 workflows:
