@@ -37,8 +37,6 @@ jobs:
           path: ~/project/screenshots/__snapshots__
           destination: /screenshot-ci
 
-#orbs:
-#  node: circleci/node@4.1.0
 workflows:
   main-pipeline:
     jobs:
