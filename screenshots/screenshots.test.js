@@ -28,12 +28,12 @@ describe('Screenshots tests', () => {
 
       console.log(`In resolution ${resolution}`);
       const image = await page.screenshot({ fullPage: true });
-
-      expect(image).toMatchImageSnapshot({
-        customSnapshotsDir: `./screenshots/__snapshots__/${currentPage}`,
-        customDiffDir: `./screenshots/__snapshots__/${currentPage}/diffs`,
-        customSnapshotIdentifier: `${resolution}-${width}`
-      });
+      //
+      // expect(image).toMatchImageSnapshot({
+      //   customSnapshotsDir: `./screenshots/__snapshots__/${currentPage}`,
+      //   customDiffDir: `./screenshots/__snapshots__/${currentPage}/diffs`,
+      //   customSnapshotIdentifier: `${resolution}-${width}`
+      // });
       console.log(`done in resolution ${resolution}`);
     });
 
