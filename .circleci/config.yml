@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   screenshot:
     executor: node/default
-    working_directory: ~/screenshot-ci
+#    working_directory: ~/screenshot-ci
     steps:
       - checkout
       - node/install-packages
