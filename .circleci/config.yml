@@ -16,6 +16,9 @@ jobs:
           name: install dependencies
           command: npm ci
       - run:
+          command: cat /sys/fs/cgroup/memory/memory.max_usage_in_bytes
+          when: always
+      - run:
           name: Install Headless Chrome dependencies
           command: |
             sudo apt-get install -yq \
