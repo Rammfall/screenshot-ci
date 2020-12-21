@@ -1,9 +1,13 @@
 version: 2.1
 
+executors:
+  node:
+    docker:
+      - image: 'cimg/node:14.15'
 
 jobs:
   screenshot:
-    executor: node/default
+    executor: node
     steps:
       - checkout
       - node/install-packages
@@ -35,8 +39,8 @@ jobs:
           path: ~/project/screenshots/__snapshots__
           destination: /screenshot-ci
 
-orbs:
-  node: circleci/node@4.1.0
+#orbs:
+#  node: circleci/node@4.1.0
 workflows:
   main-pipeline:
     jobs:
