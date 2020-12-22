@@ -33,8 +33,6 @@ describe('Screenshots tests', () => {
         customSnapshotsDir: `./screenshots/__snapshots__/${currentPage}`,
         customDiffDir: `./screenshots/__snapshots__/${currentPage}/diffs`,
         customSnapshotIdentifier: `${resolution}-${width}`,
-        failureThreshold: 0.1,
-        failureThresholdType: 'percent'
       });
     });
 

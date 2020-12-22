@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --maxWorkers=2",
+    "test": "jest --maxWorkers=2 --no-sandbox",
     "dev": "next -- -p 4000",
     "build": "next build",
-    "start": "next start -p 4000"
+    "start": "next start -p 4000",
+    "docker:build": "docker build -t ubunt_screenshot ."
   },
   "repository": {
     "type": "git",
