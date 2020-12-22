@@ -1,7 +1,7 @@
 module.exports = {
   pages: [
     '',
-    'solutions/marketplaces-development-services'
+    'about'
   ],
-  url: 'https://rubygarage.org'
+  url: 'http://localhost:4000'
 };
